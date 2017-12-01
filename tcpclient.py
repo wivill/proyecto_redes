@@ -10,7 +10,7 @@ if arglen < 3:
 data = str()
 data = data + str(sys.argv[2])
 for i in range(3, arglen):
-    data = data+':'+str(sys.argv[i])
+    data = data + ' ' + str(sys.argv[i])
 
 s = socket.socket()
 

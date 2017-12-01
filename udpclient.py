@@ -13,8 +13,10 @@ port = 22222
 addr = sys.argv[1]
 data = str()
 data = data + sys.argv[2]
+
 for i in range(3, len(sys.argv)):
-    data = data+':'+sys.argv[i]
+    data = data + ' ' + sys.argv[i]
+
 s.sendto(data, (addr, port))
 data, addr = s.recvfrom(1024)
 print(data)
