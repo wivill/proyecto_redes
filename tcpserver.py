@@ -15,11 +15,11 @@ while True:
     print('Address:', addr, 'Data:', data)
 
     mylist = list(data.split(':'))
-    intlist = list()
+    # intlist = list()
 
-    for i in range(0, len(mylist)):
-        intlist.append(int(mylist[i]))
+    # for i in range(0, len(mylist)):
+    #    intlist.append(int(mylist[i]))
 
-    intlist.sort()
-    c.send(str(intlist))
+    # intlist.sort()
+    c.send(str(mylist))
     c.close()

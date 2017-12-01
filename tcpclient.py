@@ -5,7 +5,7 @@ import socket
 
 arglen = len(sys.argv)
 if arglen < 3:
-    print('please run as python TCPclient.py <ip_address> <numbers>')
+    print('Ejecute como python tcpclient.py <ip_address> <numbers>')
     exit()
 data = str()
 data = data + str(sys.argv[2])
