@@ -19,7 +19,6 @@ s = socket.socket()
 
 port = 11111
 s.connect((sys.argv[1], port))
-data = "hola"
 s.send(data)
 
 print("\nDatos recibidos")
