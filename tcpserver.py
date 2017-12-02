@@ -11,8 +11,9 @@ port = 11111
 s.bind(('', port))
 
 s.listen(5)
+bandera = True
 
-while True:
+while bandera == True:
     c, addr = s.accept()
     data = c.recv(1024)
     data_return = data.upper()
@@ -28,5 +29,11 @@ while True:
     #    intlist.append(int(mylist[i]))
 
     # intlist.sort()
-    c.send(str(mylist))
-    c.close()
+    c.send(data_return)
+    s.listen(5)
+    
+    if data == "-*/d":
+		print("Se ha enviado la bandera, se termina la conexión")
+		bandera = False
+
+c.close()
