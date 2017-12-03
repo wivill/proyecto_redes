@@ -37,8 +37,8 @@ while bandera == 0:
 	print(datos_recibidos)
 	datos_recibidos = str()
 	
-	if datos_recibidos == "-*/D":
-		print("if")
+	if data == "-*/d":
+		#print("if")
 		bandera = 1
 	else:
 		data = str(raw_input('\nIntroduzca el dato nuevamente. Para finalizar introduzca "-*/d" '))
@@ -46,7 +46,7 @@ while bandera == 0:
 s.shutdown(0)
 s.close
 	
-
+"""
 
 h= socket.socket()
 
@@ -57,4 +57,4 @@ h.send(data)
 
 print("\nDatos enviados")
 print(data)
-
+"""
