@@ -6,6 +6,8 @@ import socket
 # import time
 
 # Inicializa
+
+print("Bienvenido. Esperando la recepción de solicitudes...")
 s = socket.socket()
 port = 11111
 
@@ -13,12 +15,18 @@ s.bind(('', port))
 
 s.listen(5)
 bandera = True
+primer_mensaje = False
 
 while(bandera):
     c, addr = s.accept()
     data = c.recv(1024)
     data_return = data.upper()
 # Agregar conversión de minúsculas a mayúsculas
+    if (primer_mensaje is False):
+        print("Primer mensaje recibido. Esperando solicitudes")
+        primer_mensaje = True
+    else:
+        print("Mensaje recibido. Esperando solicitudes")
 
     print('Address:', addr, 'Data:', data_return)
 
