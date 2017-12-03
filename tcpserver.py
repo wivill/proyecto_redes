@@ -10,7 +10,7 @@ import socket
 print("Bienvenido. Esperando la recepción de solicitudes...\n\n")
 s = socket.socket()
 port = 11111
-
+s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind(('', port))
 
 s.listen(5)
@@ -29,11 +29,11 @@ while(bandera):
 
     if (primer_mensaje is False):
         print("Primer mensaje recibido. Esperando solicitudes.\n")
-        c.send("Primer mensaje recibido. Esperando solicitudes.\n")
+        # c.send("Primer mensaje recibido. Esperando solicitudes.\n")
         primer_mensaje = True
     else:
         print("Mensaje recibido. Esperando solicitudes.\n")
-        c.send("Mensaje recibido. Esperando solicitudes.\n")
+        # c.send("Mensaje recibido. Esperando solicitudes.\n")
 
     print('Address:', addr, 'Data:', data_return)
 
