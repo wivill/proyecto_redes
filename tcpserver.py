@@ -3,6 +3,7 @@
 
 # Importa la biblioteca socket para crear enlaces
 import socket
+# import time
 
 # Inicializa
 s = socket.socket()
@@ -13,7 +14,7 @@ s.bind(('', port))
 s.listen(5)
 bandera = True
 
-while bandera == True:
+while(bandera):
     c, addr = s.accept()
     data = c.recv(1024)
     data_return = data.upper()
@@ -21,19 +22,12 @@ while bandera == True:
 
     print('Address:', addr, 'Data:', data_return)
 
-    # mylist = list(data.split(':'))
     mylist = list(data.split(' '))
-    # intlist = list()
-
-    # for i in range(0, len(mylist)):
-    #    intlist.append(int(mylist[i]))
-
-    # intlist.sort()
     c.send(data_return)
     s.listen(5)
-    
+
     if data == "-*/d":
-		print("Se ha enviado la bandera, se termina la conexión")
-		bandera = False
+        print("Se ha enviado la bandera, se termina la conexión")
+        bandera = False
 
 s.close()
