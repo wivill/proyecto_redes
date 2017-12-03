@@ -33,11 +33,11 @@ while bandera == 0:
 	s.send(data)
 	
 	print("\nDatos recibidos")
+	datos_recibidos = str()
 	datos_recibidos = s.recv(1024)
 	print(datos_recibidos)
-	datos_recibidos = str()
-	
-	if data == "-*/d":
+		
+	if datos_recibidos == "-*/D":
 		#print("if")
 		bandera = 1
 	else:
