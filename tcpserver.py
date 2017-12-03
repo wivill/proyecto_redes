@@ -36,4 +36,4 @@ while bandera == True:
 		print("Se ha enviado la bandera, se termina la conexión")
 		bandera = False
 
-c.close()
+s.close()
